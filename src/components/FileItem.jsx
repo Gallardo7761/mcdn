@@ -22,7 +22,7 @@ const formatDate = (mtime) => {
 export default function FileItem({ item, currentPath, copiedName, onNavigate, onCopy }) {
   const isDir = item.type === 'directory';
   const realPath = item.isGlobal ? item.name : `${currentPath}${item.name}`;
-  const downloadUrl = `/${realPath}`;
+  const downloadUrl = `/files/${realPath}`;
   const isCopied = copiedName === realPath;
 
   const [hashStatus, setHashStatus] = useState('idle');
@@ -40,8 +40,8 @@ export default function FileItem({ item, currentPath, copiedName, onNavigate, on
     setHashStatus('loading');
     try {
       const fetchUrl = window.location.hostname === 'localhost' 
-        ? `https://cdn.miarma.net/${realPath}.sha256` 
-        : `/${realPath}.sha256`;
+        ? `https://cdn.miarma.net/files/${realPath}.sha256` 
+        : `/files/${realPath}.sha256`;
 
       const res = await fetch(fetchUrl);
       if (!res.ok) throw new Error();

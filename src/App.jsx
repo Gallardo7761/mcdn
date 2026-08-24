@@ -3,7 +3,7 @@ import Header from './components/Header';
 import Breadcrumbs from './components/Breadcrumbs';
 import FileList from './components/FileList';
 
-const STORAGE_ENDPOINT = 'https://cdn.miarma.net/api/';
+const STORAGE_ENDPOINT = 'https://cdn.miarma.net/files/';
 
 const getPathFromUrl = () => {
   const path = window.location.pathname;
@@ -79,7 +79,7 @@ export default function App() {
   }, [rawItems, search, globalItems]);
 
   const handleCopy = (realPath) => {
-    const fullUrl = `${window.location.origin}/${realPath}`;
+    const fullUrl = `${window.location.origin}/files/${realPath}`;
     navigator.clipboard.writeText(fullUrl);
     setCopiedName(realPath);
     setTimeout(() => setCopiedName(null), 1500);
