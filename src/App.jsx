@@ -92,9 +92,10 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center gap-8 px-4 py-10 sm:py-16">
-      <main className="w-full max-w-3xl flex flex-col gap-6">
-        <Header search={search} onSearchChange={handleSearchChange} count={items.length} />
+    <div className="miarma-shell">
+      <Header search={search} onSearchChange={handleSearchChange} count={items.length} />
+
+      <main className="miarma-container flex flex-col gap-6 pb-10">
         <Breadcrumbs currentPath={currentPath} onNavigate={handleNavigate} />
 
         <FileList
