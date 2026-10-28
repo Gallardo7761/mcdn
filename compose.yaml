@@ -1,0 +1,21 @@
+name: mcdn
+
+services:
+  web:
+    build:
+      context: .
+    image: git.miarma.net/gallardo7761/mcdn-web:${WEB_VERSION:-latest}
+    container_name: mcdn-web
+    restart: unless-stopped
+    networks:
+      - proxy_net
+    volumes:
+      - ${CDN_FILES_DIR:-/var/www/files}:/srv/files:ro
+    logging:
+      options:
+        max-size: 10m
+        max-file: "3"
+
+networks:
+  proxy_net:
+    external: true

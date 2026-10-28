@@ -11,20 +11,20 @@ export default function Breadcrumbs({ currentPath, onNavigate }) {
   };
 
   return (
-    <nav className="flex items-center gap-2 text-xs sm:text-sm text-[#e3bb9d]/60 font-mono overflow-x-auto">
+    <nav className="flex items-center gap-2 text-xs sm:text-sm text-miarma-text-muted overflow-x-auto">
       <button
         onClick={() => handleClick(-1)}
-        className="hover:text-[#e3bb9d] transition-colors flex items-center gap-1 cursor-pointer"
+        className="hover:text-miarma-orange-light transition-colors flex items-center gap-1 cursor-pointer"
       >
         ~ storage
       </button>
       {parts.map((folder, index) => (
         <div key={folder} className="flex items-center gap-2">
-          <span className="text-white/20">/</span>
+          <span className="text-miarma-blue">/</span>
           <button
             onClick={() => handleClick(index)}
             className={`transition-colors cursor-pointer ${
-              index === parts.length - 1 ? 'text-[#e3bb9d] font-semibold' : 'hover:text-[#e3bb9d]'
+              index === parts.length - 1 ? 'text-miarma-orange-light' : 'hover:text-miarma-orange-light'
             }`}
           >
             {folder}

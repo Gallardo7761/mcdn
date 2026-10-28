@@ -4,7 +4,7 @@ const icons = import.meta.glob('../assets/icons/*.svg', {
   import: 'default'
 });
 
-export default function FileIcon({ isDirectory, className = "w-5 h-5 bg-brand-light-orange" }) {
+export default function FileIcon({ isDirectory, className = "w-5 h-5 bg-miarma-orange" }) {
   const iconName = isDirectory ? 'folder' : 'file';
   const iconSrc = icons[`../assets/icons/${iconName}.svg`] || icons['../assets/icons/file.svg'];
 

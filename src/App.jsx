@@ -92,14 +92,11 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-brand-dark text-slate-100 relative overflow-hidden flex flex-col items-center justify-center p-4 sm:p-8 font-sans selection:bg-brand-orange/30 selection:text-brand-light-orange">
-      <div className="absolute -top-40 -left-40 w-96 h-96 bg-brand-light-blue/20 rounded-full blur-huge pointer-events-none" />
-      <div className="absolute top-1/2 -right-40 w-96 h-96 bg-brand-orange/15 rounded-full blur-huge pointer-events-none" />
-
-      <main className="w-full max-w-xl backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-6 sm:p-8 shadow-2xl relative z-10 flex flex-col gap-6">
-        <Header search={search} onSearchChange={handleSearchChange} />
+    <div className="min-h-screen flex flex-col items-center gap-8 px-4 py-10 sm:py-16">
+      <main className="w-full max-w-3xl flex flex-col gap-6">
+        <Header search={search} onSearchChange={handleSearchChange} count={items.length} />
         <Breadcrumbs currentPath={currentPath} onNavigate={handleNavigate} />
-        
+
         <FileList
           items={items}
           loading={loading && search.length > 0 && !globalItems}
@@ -109,12 +106,9 @@ export default function App() {
           onNavigate={handleNavigate}
           onCopy={handleCopy}
         />
-
-        <footer className="flex justify-between items-center text-sm text-white/20 font-mono pt-4 border-t border-white/5">
-          <span>Total: {items.length} elementos</span>
-          <span>Dev'd by Gallardo7761</span>
-        </footer>
       </main>
+
+      <miarma-footer />
     </div>
   );
 }

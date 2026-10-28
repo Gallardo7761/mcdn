@@ -19,14 +19,14 @@ export function CopyIcon({ className = "w-4 h-4 bg-current" }) {
   return <MaskIcon src={clipboardSvg} className={className} />;
 }
 
-export function CheckIcon({ className = "w-4 h-4 bg-emerald-400" }) {
+export function CheckIcon({ className = "w-4 h-4 bg-current" }) {
   return <MaskIcon src={clipboardCheckSvg} className={className} />;
 }
 
-export function DownloadIcon({ className = "w-5 h-5 bg-brand-orange" }) {
+export function DownloadIcon({ className = "w-5 h-5 bg-miarma-orange" }) {
   return <MaskIcon src={downloadSvg} className={className} />;
 }
 
-export function HashIcon({ className = "w-4 h-4 bg-emerald-400" }) {
+export function HashIcon({ className = "w-4 h-4 bg-current" }) {
   return <MaskIcon src={hashSvg} className={className} />;
 }

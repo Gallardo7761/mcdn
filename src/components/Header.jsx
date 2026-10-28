@@ -1,25 +1,30 @@
-export default function Header({ search, onSearchChange }) {
+export default function Header({ search, onSearchChange, count }) {
   return (
-    <header className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/5 pb-6">
-      <div className="flex items-center gap-3">
-        <div className="h-10 w-10 rounded-xl bg-linear-to-br from-brand-light-blue to-brand-blue flex items-center justify-center text-brand-light-orange shadow-lg border border-white/10 font-mono font-bold">
-          CDN
-        </div>
-        <div>
-          <h1 className="text-xl font-bold tracking-tight text-white">Archivos públicos</h1>
-          <p className="text-xs text-brand-light-orange/70 font-mono">cdn.miarma.net</p>
-        </div>
-      </div>
-
-      <div className="relative w-full sm:w-64">
-        <input
-          type="text"
-          value={search}
-          onChange={(e) => onSearchChange(e.target.value)}
-          placeholder="Buscar fichero..."
-          className="w-full bg-white/4 border border-white/10 rounded-xl px-4 py-2 text-sm text-slate-100 placeholder-white/30 backdrop-blur-sm focus:outline-none focus:border-brand-orange/50 transition-colors"
+    <header className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <a href="/" className="group inline-flex items-center gap-3 text-miarma-text hover:text-miarma-text">
+        <img
+          src="https://cdn.miarma.net/files/img/logo-without-text.svg"
+          alt=""
+          width={40}
+          height={40}
+          className="p-1.5 bg-miarma-text rounded-[10px] transition-transform duration-300 group-hover:-rotate-10"
         />
-      </div>
+        <span>
+          <h1 className="m-0 text-[clamp(1.6rem,4vw,2.2rem)] leading-none tracking-tight">
+            cdn<span className="text-miarma-orange">.</span>miarma<span className="text-miarma-orange">.</span>net
+          </h1>
+          <span className="block mt-1 text-xxs text-miarma-text-muted">archivos públicos · {count} elementos</span>
+        </span>
+      </a>
+
+      <input
+        type="text"
+        value={search}
+        onChange={(e) => onSearchChange(e.target.value)}
+        placeholder="Buscar fichero..."
+        aria-label="Buscar fichero"
+        className="w-full sm:w-64 bg-transparent border-[1.5px] border-miarma-blue-dark rounded-[10px] px-4 py-2 text-sm text-miarma-text placeholder-miarma-text-muted focus:outline-none focus:border-miarma-orange transition-colors"
+      />
     </header>
   );
 }

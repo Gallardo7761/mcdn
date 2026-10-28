@@ -1,0 +1,66 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+env:
+  IMAGE: git.miarma.net/gallardo7761/mcdn-web
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    container:
+      image: catthehacker/ubuntu:act-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Versioning
+        id: version
+        run: |
+          VERSION=$(sed -n 's/^ *"version": *"\(.*\)",*$/\1/p' package.json | head -n 1)
+          if ! printf '%s' "$VERSION" | grep -Eq '^[0-9]+\.[0-9]+\.[0-9]+$'; then
+            echo "::error::La versión de package.json no es major.minor.fix: '$VERSION'"
+            exit 1
+          fi
+          if git ls-remote --exit-code --tags origin "refs/tags/v$VERSION" > /dev/null; then
+            echo "::error::v$VERSION ya está publicada. Sube la versión en package.json."
+            exit 1
+          fi
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Login Registry
+        uses: docker/login-action@v3
+        with:
+          registry: git.miarma.net
+          username: ${{ gitea.actor }}
+          password: ${{ secrets.REGISTRY_TOKEN }}
+
+      - name: Image
+        env:
+          WEB_VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          docker compose build
+          docker tag "$IMAGE:$WEB_VERSION" "$IMAGE:latest"
+          docker push "$IMAGE:$WEB_VERSION"
+          docker push "$IMAGE:latest"
+
+      - name: Container
+        env:
+          WEB_VERSION: ${{ steps.version.outputs.version }}
+        run: docker compose up -d --no-build --remove-orphans
+
+      - name: Git tag
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          git tag "v$VERSION"
+          git push origin "v$VERSION"
+
+      - name: Clean orphan images
+        run: docker image prune -f

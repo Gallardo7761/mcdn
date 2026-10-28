@@ -1,45 +1,22 @@
 @import "tailwindcss";
 
-:root {
-  --blue: #0a365e;
-  --light-blue: #2f6ca3;
-  --orange: #c1763c;
-  --light-orange: #e3bb9d;
+@theme inline {
+  --color-miarma-bg: var(--miarma-bg);
+  --color-miarma-blue: var(--miarma-blue);
+  --color-miarma-blue-dark: var(--miarma-blue-dark);
+  --color-miarma-blue-deep: var(--miarma-blue-deep);
+  --color-miarma-blue-night: var(--miarma-blue-night);
+  --color-miarma-orange: var(--miarma-orange);
+  --color-miarma-orange-deep: var(--miarma-orange-deep);
+  --color-miarma-orange-light: var(--miarma-orange-light);
+  --color-miarma-text: var(--miarma-text);
+  --color-miarma-text-muted: var(--miarma-text-muted);
 
-  --text: #2f6ca3;
-  --text-h: #0a365e;
-  --bg: #ffffff;
-  --border: #e3bb9d;
-  --code-bg: rgba(227, 187, 157, 0.2);
-  --accent: #c1763c;
-  --accent-bg: rgba(193, 118, 60, 0.1);
-  --accent-border: rgba(193, 118, 60, 0.4);
-  --shadow: rgba(10, 54, 94, 0.08) 0 10px 15px -3px, rgba(10, 54, 94, 0.04) 0 4px 6px -2px;
+  --font-sans: var(--miarma-font-body);
+  --font-mono: var(--miarma-font-body);
+  --font-display: var(--miarma-font-display);
 }
 
 @theme {
-  --color-brand-dark: #040f1a;
-  --color-brand-blue: #0a365e;
-  --color-brand-light-blue: #2f6ca3;
-  --color-brand-orange: #c1763c;
-  --color-brand-light-orange: #e3bb9d;
-
-  --blur-huge: 140px;
   --text-xxs: 11px;
-  --spacing-22: 88px;
-  --spacing-70: 280px;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #e3bb9d;
-    --text-h: #ffffff;
-    --bg: #061e35;
-    --border: #2f6ca3;
-    --code-bg: rgba(10, 54, 94, 0.6);
-    --accent: #c1763c;
-    --accent-bg: rgba(227, 187, 157, 0.15);
-    --accent-border: rgba(227, 187, 157, 0.4);
-    --shadow: rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
 }
