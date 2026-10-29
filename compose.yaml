@@ -1,11 +1,11 @@
-name: mcdn
+name: cdn
 
 services:
   web:
     build:
       context: .
-    image: git.killobyte.es/gallardo7761/mcdn-web:${WEB_VERSION:-latest}
-    container_name: mcdn-web
+    image: git.killobyte.es/gallardo7761/cdn-web:${WEB_VERSION:-latest}
+    container_name: cdn-web
     restart: unless-stopped
     networks:
       - proxy_net
