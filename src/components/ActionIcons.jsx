@@ -23,7 +23,7 @@ export function CheckIcon({ className = "w-4 h-4 bg-current" }) {
   return <MaskIcon src={clipboardCheckSvg} className={className} />;
 }
 
-export function DownloadIcon({ className = "w-5 h-5 bg-miarma-orange" }) {
+export function DownloadIcon({ className = "w-5 h-5 bg-kb-orange" }) {
   return <MaskIcon src={downloadSvg} className={className} />;
 }
 

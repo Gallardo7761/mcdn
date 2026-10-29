@@ -1,20 +1,20 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-miarma-bg: var(--miarma-bg);
-  --color-miarma-blue: var(--miarma-blue);
-  --color-miarma-blue-dark: var(--miarma-blue-dark);
-  --color-miarma-blue-deep: var(--miarma-blue-deep);
-  --color-miarma-blue-night: var(--miarma-blue-night);
-  --color-miarma-orange: var(--miarma-orange);
-  --color-miarma-orange-deep: var(--miarma-orange-deep);
-  --color-miarma-orange-light: var(--miarma-orange-light);
-  --color-miarma-text: var(--miarma-text);
-  --color-miarma-text-muted: var(--miarma-text-muted);
+  --color-kb-bg: var(--kb-bg);
+  --color-kb-blue: var(--kb-blue);
+  --color-kb-blue-dark: var(--kb-blue-dark);
+  --color-kb-blue-deep: var(--kb-blue-deep);
+  --color-kb-blue-night: var(--kb-blue-night);
+  --color-kb-orange: var(--kb-orange);
+  --color-kb-orange-deep: var(--kb-orange-deep);
+  --color-kb-orange-light: var(--kb-orange-light);
+  --color-kb-text: var(--kb-text);
+  --color-kb-text-muted: var(--kb-text-muted);
 
-  --font-sans: var(--miarma-font-body);
-  --font-mono: var(--miarma-font-body);
-  --font-display: var(--miarma-font-display);
+  --font-sans: var(--kb-font-body);
+  --font-mono: var(--kb-font-body);
+  --font-display: var(--kb-font-display);
 }
 
 @theme {

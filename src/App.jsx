@@ -3,7 +3,7 @@ import Header from './components/Header';
 import Breadcrumbs from './components/Breadcrumbs';
 import FileList from './components/FileList';
 
-const STORAGE_ENDPOINT = 'https://cdn.miarma.net/files/';
+const STORAGE_ENDPOINT = 'https://cdn.killobyte.es/files/';
 
 const getPathFromUrl = () => {
   const path = window.location.pathname;
@@ -92,10 +92,10 @@ export default function App() {
   };
 
   return (
-    <div className="miarma-shell">
+    <div className="kb-shell">
       <Header search={search} onSearchChange={handleSearchChange} count={items.length} />
 
-      <main className="miarma-container flex flex-col gap-6 pb-10">
+      <main className="kb-container flex flex-col gap-6 pb-10">
         <Breadcrumbs currentPath={currentPath} onNavigate={handleNavigate} />
 
         <FileList
@@ -109,7 +109,7 @@ export default function App() {
         />
       </main>
 
-      <miarma-footer />
+      <kb-footer />
     </div>
   );
 }

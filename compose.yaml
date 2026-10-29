@@ -4,7 +4,7 @@ services:
   web:
     build:
       context: .
-    image: git.miarma.net/gallardo7761/mcdn-web:${WEB_VERSION:-latest}
+    image: git.killobyte.es/gallardo7761/mcdn-web:${WEB_VERSION:-latest}
     container_name: mcdn-web
     restart: unless-stopped
     networks:
