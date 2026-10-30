@@ -4,7 +4,7 @@ export default function FileList({ items, loading, error, currentPath, copiedNam
   if (loading) {
     return (
       <div className="flex flex-col items-center justify-center py-20 text-kb-text-muted text-sm gap-2">
-        <div className="w-6 h-6 border-2 border-kb-blue border-t-kb-orange rounded-full animate-spin" />
+        <div className="w-6 h-6 border-2 border-kb-green border-t-kb-orange rounded-full animate-spin" />
         <span>Consultando CDN...</span>
       </div>
     );
@@ -27,7 +27,7 @@ export default function FileList({ items, loading, error, currentPath, copiedNam
   }
 
   return (
-    <div className="flex flex-col border-[1.5px] border-kb-blue rounded-[10px] overflow-hidden divide-y divide-kb-blue-dark">
+    <div className="flex flex-col border-[1.5px] border-kb-green rounded-[10px] overflow-hidden divide-y divide-kb-green-dark">
       {items.map((item) => (
         <FileItem
           key={item.name}

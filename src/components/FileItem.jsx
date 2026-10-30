@@ -73,7 +73,7 @@ export default function FileItem({ item, currentPath, copiedName, onNavigate, on
   };
 
   return (
-    <div className="flex flex-col p-3 hover:bg-kb-blue-night transition-colors duration-150 group">
+    <div className="flex flex-col p-3 hover:bg-kb-green-night transition-colors duration-150 group">
 
       <div className="flex items-center justify-between">
         {isDir ? (
@@ -81,7 +81,7 @@ export default function FileItem({ item, currentPath, copiedName, onNavigate, on
             className="flex items-center gap-3.5 flex-1 min-w-0 cursor-pointer"
             onClick={() => onNavigate(`${realPath}/`)}
           >
-            <span className="w-9 h-9 rounded-lg flex items-center justify-center border-[1.5px] border-kb-blue group-hover:border-kb-orange transition-colors shrink-0">
+            <span className="w-9 h-9 rounded-lg flex items-center justify-center border-[1.5px] border-kb-green group-hover:border-kb-orange transition-colors shrink-0">
               <FileIcon
                 isDirectory={true}
                 className="w-5 h-5 bg-kb-orange"
@@ -100,12 +100,12 @@ export default function FileItem({ item, currentPath, copiedName, onNavigate, on
             download
             className="flex items-center gap-3.5 flex-1 min-w-0 no-underline cursor-pointer"
           >
-            <span className="w-9 h-9 rounded-lg flex items-center justify-center border-[1.5px] border-kb-blue-dark group-hover:border-kb-orange transition-colors relative shrink-0">
+            <span className="w-9 h-9 rounded-lg flex items-center justify-center border-[1.5px] border-kb-green-dark group-hover:border-kb-orange transition-colors relative shrink-0">
               <span className="group-hover:hidden flex items-center justify-center">
                 <FileIcon
                   name={item.name}
                   isDirectory={false}
-                  className="w-5 h-5 bg-kb-blue"
+                  className="w-5 h-5 bg-kb-green"
                 />
               </span>
               <span className="hidden group-hover:flex items-center justify-center">
@@ -131,10 +131,10 @@ export default function FileItem({ item, currentPath, copiedName, onNavigate, on
               <button
                 onClick={handleToggleHash}
                 title="Mostrar SHA-256"
-                className="flex items-center justify-center p-2 rounded-lg border-[1.5px] border-kb-blue-dark text-kb-text-muted hover:bg-kb-orange hover:border-kb-orange hover:text-kb-bg transition-colors cursor-pointer min-w-9"
+                className="flex items-center justify-center p-2 rounded-lg border-[1.5px] border-kb-green-dark text-kb-text-muted hover:bg-kb-orange hover:border-kb-orange hover:text-kb-bg transition-colors cursor-pointer min-w-9"
               >
                 {hashStatus === 'idle' && <HashIcon className="w-4 h-4 bg-current" />}
-                {hashStatus === 'loading' && <div className="w-4 h-4 border-2 border-kb-blue border-t-transparent rounded-full animate-spin" />}
+                {hashStatus === 'loading' && <div className="w-4 h-4 border-2 border-kb-green border-t-transparent rounded-full animate-spin" />}
                 {(hashStatus === 'done' || hashStatus === 'copied') && <HashIcon className="w-4 h-4 bg-current" />}
                 {hashStatus === 'error' && <span className="text-kb-orange font-bold text-xs">X</span>}
               </button>
@@ -142,7 +142,7 @@ export default function FileItem({ item, currentPath, copiedName, onNavigate, on
               <button
                 onClick={(e) => { e.preventDefault(); onCopy(realPath); }}
                 title="Copiar enlace"
-                className="flex items-center justify-center p-2 rounded-lg border-[1.5px] border-kb-blue-dark text-kb-text-muted hover:bg-kb-orange hover:border-kb-orange hover:text-kb-bg transition-colors cursor-pointer min-w-9"
+                className="flex items-center justify-center p-2 rounded-lg border-[1.5px] border-kb-green-dark text-kb-text-muted hover:bg-kb-orange hover:border-kb-orange hover:text-kb-bg transition-colors cursor-pointer min-w-9"
               >
                 {isCopied ? <CheckIcon /> : <CopyIcon className="w-4 h-4 bg-current" />}
               </button>
@@ -154,9 +154,9 @@ export default function FileItem({ item, currentPath, copiedName, onNavigate, on
       </div>
 
       {hashText && (
-        <div className="mt-3 ml-12 p-3 border-[1.5px] border-kb-blue-dark rounded-lg flex items-center justify-between gap-4">
+        <div className="mt-3 ml-12 p-3 border-[1.5px] border-kb-green-dark rounded-lg flex items-center justify-between gap-4">
           <div className="flex flex-col overflow-hidden">
-            <span className="text-[10px] text-kb-blue uppercase tracking-wider mb-1">
+            <span className="text-[10px] text-kb-green uppercase tracking-wider mb-1">
               SHA-256 Checksum
             </span>
             <span className="text-xs text-kb-orange-light break-all select-all">
@@ -165,7 +165,7 @@ export default function FileItem({ item, currentPath, copiedName, onNavigate, on
           </div>
           <button
             onClick={copyHashToClipboard}
-            className="flex items-center justify-center p-2 rounded-lg border-[1.5px] border-kb-blue-dark text-kb-text-muted hover:bg-kb-orange hover:border-kb-orange hover:text-kb-bg transition-colors cursor-pointer min-w-9"
+            className="flex items-center justify-center p-2 rounded-lg border-[1.5px] border-kb-green-dark text-kb-text-muted hover:bg-kb-orange hover:border-kb-orange hover:text-kb-bg transition-colors cursor-pointer min-w-9"
             title="Copiar Hash"
           >
             {hashStatus === 'copied' ? <CheckIcon /> : <CopyIcon className="w-4 h-4 bg-current" />}

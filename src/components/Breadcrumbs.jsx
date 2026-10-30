@@ -20,7 +20,7 @@ export default function Breadcrumbs({ currentPath, onNavigate }) {
       </button>
       {parts.map((folder, index) => (
         <div key={folder} className="flex items-center gap-2">
-          <span className="text-kb-blue">/</span>
+          <span className="text-kb-green">/</span>
           <button
             onClick={() => handleClick(index)}
             className={`transition-colors cursor-pointer ${

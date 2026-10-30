@@ -2,13 +2,14 @@
 
 @theme inline {
   --color-kb-bg: var(--kb-bg);
-  --color-kb-blue: var(--kb-blue);
-  --color-kb-blue-dark: var(--kb-blue-dark);
-  --color-kb-blue-deep: var(--kb-blue-deep);
-  --color-kb-blue-night: var(--kb-blue-night);
+  --color-kb-green: var(--kb-green);
+  --color-kb-green-dark: var(--kb-green-dark);
+  --color-kb-green-deep: var(--kb-green-deep);
+  --color-kb-green-night: var(--kb-green-night);
   --color-kb-orange: var(--kb-orange);
   --color-kb-orange-deep: var(--kb-orange-deep);
   --color-kb-orange-light: var(--kb-orange-light);
+  --color-kb-gold: var(--kb-gold);
   --color-kb-text: var(--kb-text);
   --color-kb-text-muted: var(--kb-text-muted);
 
